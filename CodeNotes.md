@@ -8,6 +8,8 @@ All line notes refer to the unedited version of the code, not the result of my r
 - Align table text to the center
 - Add Background image of Charlottesville's Downtown Mall
 
+### Refactor to ES6
+Remove code written in the ES5 style and update to ES6 standards.
 ### Update Images
 #### Initial Code (Line 137):
 ```

@@ -116,7 +116,7 @@
          *        ...
          *    ]
          */
-        function getPersonList() {
+        const getPersonList = () => {
             return new Promise((resolve, reject) => {
                 fetch('https://willowtreeapps.com/api/v1.0/profiles')
                 .then(response => {
@@ -139,11 +139,11 @@
          ***************************************************/
 
 
-        function getLastName(person) {
+        const getLastName = person => {
             return person.lastName;
         }
 
-        const getFirstName = (person) => {
+        const getFirstName = person => {
             return person.firstName;
         };
 
@@ -157,7 +157,7 @@
 
         // headshot URLs are scheme relative //
         // prepend http: to prevent invalid schemes like file:// or uri://
-        const getImageUrl = (person) => {
+        const getImageUrl = person => {
             if (person.headshot.url) {
               return `http:${person.headshot.url}`;
             } else {
@@ -168,7 +168,7 @@
         /**
          * Fisher-Yates shuffle
          */
-        function shuffleList(list) {
+        const shuffleList = list => {
             // Make a copy & don't mutate the passed in list
             let result = list.slice(1);
 
@@ -182,16 +182,16 @@
             }
 
             return result;
-        }
+        };
 
 
         /**
          * Remove any people that do not have the name we are
          * searching for.
          */
-        function filterByName(searchForName, personList) {
+        const filterByName = (searchForName, personList) => {
           let regex = new RegExp('^' + searchForName.toLowerCase());
-            return personList.filter((person) => {
+            return personList.filter( person => {
                 return person.firstName.toLowerCase().match(regex) || person.lastName.toLowerCase().match(regex);
             });
         }
@@ -213,8 +213,8 @@
          *    > [{ name: 'Jon' }, { name: 'Kevin' }, { name: 'Sam' }]
          *
          */
-        function sortObjListByProp(prop) {
-            return function(objList) {
+        const sortObjListByProp = prop => {
+            return (objList) => {
                 // Make a copy & don't mutate the passed in list
                 let result = objList.slice(1);
 
@@ -245,24 +245,24 @@
 
          ***************************************************/
 
-        const Search = (props) => React.DOM.input({
+        const Search = props => React.DOM.input({
             type: 'input',
             onChange: props.onChange
         });
 
-        const Thumbnail = (props) => React.DOM.img({
+        const Thumbnail = props => React.DOM.img({
             className: 'image',
             src: props.src
         });
 
-        const ListRow = (props) => React.DOM.tr({ key: `${props.person.firstName} ${props.person.lastName}` }, [
+        const ListRow = props => React.DOM.tr({ key: `${props.person.firstName} ${props.person.lastName}` }, [
             React.DOM.td({ key: 'thumb' }, React.createElement(Thumbnail, { src: getImageUrl(props.person) })),
             React.DOM.td({ key: 'first' }, null, getFirstName(props.person)),
             React.DOM.td({ key: 'last' }, null, getLastName(props.person)),
             React.DOM.td({ key: 'title' }, null, getTitle(props.person))
         ]);
 
-        const ListContainer = (props) => React.DOM.table({ className: 'list-container' }, [
+        const ListContainer = props => React.DOM.table({ className: 'list-container' }, [
             React.DOM.thead({ key: 'thead' }, React.DOM.tr({}, [
                 React.DOM.th({ key: 'thumb-h' }, null, 'Thumbnail'),
                 React.DOM.th({ key: 'first-h' }, null, 'First Name'),
