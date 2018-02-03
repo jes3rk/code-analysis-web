@@ -70,7 +70,9 @@
             border: 1px solid black;
         }
 
-
+        .logo {
+          width: 500px;
+        }
         </style>
     </head>
     <body>
@@ -293,6 +295,8 @@
                 const { visiblePersonList } = this.state;
 
                 return React.DOM.div({ className: 'app-container' }, [
+                    React.DOM.img({ key: 'logo', alt: 'WillowTree Logo', src: 'https://skilled.co/wp-content/uploads/2017/01/Willow-Tree-Apps.png', className: 'logo'}),
+                    React.DOM.h2({ key: 'subtitle' }, null, 'Company Directory'),
                     React.createElement(Search, { key: 'search', onChange: this._onSearch }),
                     React.DOM.button({ key: 'shuffle', onClick: this._shuffleList }, null, 'Shuffle'),
                     React.DOM.button({ key: 'sort-first', onClick: this._sortByFirst }, null, 'Sort (First Name)'),
