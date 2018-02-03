@@ -56,7 +56,7 @@
         }
 
         .app-container {
-            width: 500px;
+            width: 600px;
             margin: 0 auto 0 auto;
         }
 
@@ -71,7 +71,7 @@
         }
 
         .logo {
-          width: 500px;
+          width: 600px;
           margin-top: 10px;
         }
         </style>
@@ -135,6 +135,10 @@
 
         const getFirstName = (person) => {
             return person.firstName;
+        };
+
+        const getTitle = person  => {
+          return person.jobTitle;
         };
 
         // headshot URLs are scheme relative //
@@ -241,13 +245,15 @@
             React.DOM.td({ key: 'thumb' }, React.createElement(Thumbnail, { src: getImageUrl(props.person) })),
             React.DOM.td({ key: 'first' }, null, getFirstName(props.person)),
             React.DOM.td({ key: 'last' }, null, getLastName(props.person)),
+            React.DOM.td({ key: 'title' }, null, getTitle(props.person))
         ]);
 
         const ListContainer = (props) => React.DOM.table({ className: 'list-container' }, [
             React.DOM.thead({ key: 'thead' }, React.DOM.tr({}, [
                 React.DOM.th({ key: 'thumb-h' }, null, 'Thumbnail'),
                 React.DOM.th({ key: 'first-h' }, null, 'First Name'),
-                React.DOM.th({ key: 'last-h' }, null, 'Last Name')
+                React.DOM.th({ key: 'last-h' }, null, 'Last Name'),
+                React.DOM.th({ key: 'title-h' }, null, 'Title')
             ])),
             React.DOM.tbody({ key: 'tbody' }, props.personList.map((person, i) =>
                 React.createElement(ListRow, { key: `person-${i}`, person })))

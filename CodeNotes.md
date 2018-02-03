@@ -2,7 +2,7 @@
 
 All line notes refer to the unedited version of the code, not the result of my refactoring and improvements.
 ### Add CSS
-- Make the webpage wider from ```400px``` to ```500px```.
+- Make the webpage wider from ```400px``` to ```600px```.
 - Make logo same width as the app.
 - Add a ```margin-top: 10px``` to the logo.
 
@@ -45,7 +45,7 @@ function filterByName(searchForName, personList) {
 ```
 - Add a new Regular Expression constructor and set it to create a regex object based on the lowercase search string at the beginning and any characters following.
 - Refactor the filter function to return the lowercase first or last name matched to the regex of the search term.
-- Result is a constantly updating search with all potential matches being returned in real time.
+- Result is a constantly updating search with all potential matches returned in real time.
 
 
 ### Sort by Last Name
@@ -59,7 +59,7 @@ const sortByLastName = sortObjListByProp('lastName');
 ```
 Sort the employee list by last name rather than just reversing the first name sort.
 
-## Create New Elements in Primary render
+## Create New Elements
 ### Add Logo
 ```
 React.DOM.img({ key: 'logo', alt: 'WillowTree Logo', src: 'https://skilled.co/wp-content/uploads/2017/01/Willow-Tree-Apps.png', className: 'logo'})
@@ -71,3 +71,15 @@ Add the company logo to the top of the page and add CSS to fit it to the app con
 React.DOM.h2({ key: 'subtitle' }, null, 'Company Directory')
 ```
 Add a subtitle to specifically refer to the company directory.
+
+### Add Title Field
+```
+const getTitle = person  => {
+  return person.jobTitle;
+};
+/// break
+React.DOM.th({ key: 'title-h' }, null, 'Title')
+/// break
+React.DOM.td({ key: 'title' }, null, getTitle(props.person))
+```
+Add a job title field to the table
