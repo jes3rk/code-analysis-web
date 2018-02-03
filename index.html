@@ -135,7 +135,11 @@
         // headshot URLs are scheme relative //
         // prepend http: to prevent invalid schemes like file:// or uri://
         const getImageUrl = (person) => {
-            return `http:${person.headshot.url}`;
+            if (person.headshot.url) {
+              return `http:${person.headshot.url}`;
+            } else {
+              return "http://images.contentful.com/3cttzl4i3k1h/5ZUiD3uOByWWuaSQsayAQ6/c630e7f851d5adb1876c118dc4811aed/featured-image-TEST1.png";
+            }
         };
 
         /**
