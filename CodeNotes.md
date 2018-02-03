@@ -7,6 +7,7 @@ All line notes refer to the unedited version of the code, not the result of my r
 - Add a ```margin-top: 10px``` to the logo.
 - Align table text to the center
 - Add Background image of Charlottesville's Downtown Mall
+- Add ```overflow-y: scroll;``` to the body CSS to fix scrollbar to screen and prevent jitters.
 
 ### Refactor to ES6
 Remove code written in the ES5 style and update to ES6 standards.
