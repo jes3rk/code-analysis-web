@@ -19,3 +19,14 @@ const getImageUrl = (person) => {
 };
 ```
 Add a placeholder image to all persons in the API results if lacking one
+
+### Sort by Last Name
+#### Initial Code (Line 211):
+```
+const sortByLastName = (personList) => sortByFirstName(personList).reverse();
+```
+#### New Version
+```
+const sortByLastName = sortObjListByProp('lastName');
+```
+Sort the employee list by last name rather than just reversing the first name sort
