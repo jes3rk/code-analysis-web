@@ -2,7 +2,10 @@
 
 All line notes refer to the unedited version of the code, not the result of my refactoring and improvements.
 ### Add CSS
-Make the webpage wider from ```400px``` to ```500px```.
+- Make the webpage wider from ```400px``` to ```500px```.
+- Make logo same width as the app.
+- Add a ```margin-top: 10px``` to the logo.
+
 ### Update Images
 #### Initial Code (Line 137):
 ```
