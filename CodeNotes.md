@@ -25,6 +25,29 @@ const getImageUrl = (person) => {
 ```
 Add a placeholder image to all persons in the API results if lacking one.
 
+### Improve Search Engine
+#### Old Version (Line 165):
+```
+function filterByName(searchForName, personList) {
+            return personList.filter((person) => {
+                return person.firstName === searchForName || person.lastName === searchForName;
+            });
+        }
+```
+#### New Version
+```
+function filterByName(searchForName, personList) {
+  let regex = new RegExp('^' + searchForName.toLowerCase());
+    return personList.filter((person) => {
+        return person.firstName.toLowerCase().match(regex) || person.lastName.toLowerCase().match(regex);
+    });
+}
+```
+- Add a new Regular Expression constructor and set it to create a regex object based on the lowercase search string at the beginning and any characters following.
+- Refactor the filter function to return the lowercase first or last name matched to the regex of the search term.
+- Result is a constantly updating search with all potential matches being returned in real time.
+
+
 ### Sort by Last Name
 #### Initial Code (Line 211):
 ```

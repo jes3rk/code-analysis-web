@@ -172,8 +172,9 @@
          * searching for.
          */
         function filterByName(searchForName, personList) {
+          let regex = new RegExp('^' + searchForName.toLowerCase());
             return personList.filter((person) => {
-                return person.firstName === searchForName || person.lastName === searchForName;
+                return person.firstName.toLowerCase().match(regex) || person.lastName.toLowerCase().match(regex);
             });
         }
 
