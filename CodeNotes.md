@@ -75,11 +75,16 @@ Add a subtitle to specifically refer to the company directory.
 ### Add Title Field
 ```
 const getTitle = person  => {
-  return person.jobTitle;
+  if (person.jobTitle) {
+    return person.jobTitle;
+  } else {
+    return "Cat Herder";
+  };
 };
 /// break
 React.DOM.th({ key: 'title-h' }, null, 'Title')
 /// break
 React.DOM.td({ key: 'title' }, null, getTitle(props.person))
 ```
-Add a job title field to the table
+- Add a job title field to the table.
+- If no title, add title "Cat Herder".

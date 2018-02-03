@@ -138,7 +138,11 @@
         };
 
         const getTitle = person  => {
-          return person.jobTitle;
+          if (person.jobTitle) {
+            return person.jobTitle;
+          } else {
+            return "Cat Herder";
+          };
         };
 
         // headshot URLs are scheme relative //
