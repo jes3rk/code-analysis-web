@@ -5,6 +5,8 @@ All line notes refer to the unedited version of the code, not the result of my r
 - Make the webpage wider from ```400px``` to ```600px```.
 - Make logo same width as the app.
 - Add a ```margin-top: 10px``` to the logo.
+- Align table text to the center
+- Add Background image of Charlottesville's Downtown Mall
 
 ### Update Images
 #### Initial Code (Line 137):
