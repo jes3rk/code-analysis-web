@@ -7,6 +7,16 @@ All line notes refer to the unedited version of the code, not the result of my r
 - Add a ```margin-top: 10px``` to the logo.
 - Align table text to the center
 - Add Background image of Charlottesville's Downtown Mall
+ ```
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url('https://tclf.org/sites/default/files/microsites/halprinlegacy/images/charlottesville-mall/4_large_slide.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+```
 - Add ```overflow-y: scroll;``` to the body CSS to fix scrollbar to screen and prevent jitters.
 
 ### Refactor to ES6
